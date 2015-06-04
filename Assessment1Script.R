@@ -65,30 +65,8 @@ CompleteTotalSteps %>% summarize(MeanComplete = mean(TotalSteps),
 
 ## Create weekday column factor
 
-Complete_activity[,"dayofweek"] <- weekdays(activity$date)
-
-weekend <- function(x){
-    j <- c()
-    for(i in x){
-        if(i == "Monday"| i == "Tuesday"| i == "Wednesday"| i == "Thursday"| i == "Friday"){
-            j <- c(j, "weekday")
-        }
-        else if(i == "Saturday"| i == "Sunday"){
-            j <- c(j, "weekend")
-        }
-        }
-    j
-    }
-
 Complete_activity[, "weekdayFactor"] <- weekend(activity$dayofweek)
 head(Complete_activity)
-
-
-CompleteTotalSteps <- 
-    Complete_activity %>% 
-    group_by(date) %>% 
-    summarize(TotalSteps = mean(steps))
-
 
 Complete_activity <- 
     Complete_activity %>%
@@ -100,8 +78,6 @@ StepsbyFactor <-
     group_by(weekdayFactor, interval) %>%
     summarize(TotalSteps = mean(steps)) %>%
     ungroup()
-
-
 
 library(ggplot2)
 
