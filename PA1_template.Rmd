@@ -4,7 +4,7 @@ Reproducible Research Peer Assessment 1
 
 #### Introduction
 
-Information about and access to the dataset can be found at the [Reproducible Research Github page.](https://github.com/rdpeng/RepData_PeerAssessment1/blob/master/README.md)
+Information about and access to the dataset can be found under the README document.
 
 #### Loading and prepocessing the data
 
